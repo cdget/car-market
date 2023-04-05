@@ -1,0 +1,44 @@
+<div [style.margin.auto]>
+<h2 mat-dialog-title>{{ header | uppercase }}</h2>
+<mat-dialog-content>  
+    
+    <div class="example-label-container">
+        <label id="example-name-label" class="example-name-label">Interest 14%</label>
+        <p></p>
+    </div>
+    <div class="example-label-container">
+        <label id="example-name-label" class="example-name-label">{{amount}} Amount</label>
+    </div>
+    <mat-slider
+        class="example-margin"
+        [max]="carPrice"
+        [min]="0"
+        [step]="500"
+        >
+        <input matSliderThumb [(ngModel)]="amount" (click)="calculatePayment()">
+    </mat-slider> 
+    <div class="example-label-container">
+    <label id="example-name-label" class="example-name-label">{{months}} Months</label>
+    </div>
+    <mat-slider
+        class="example-margin"
+        [max]="120"
+        [min]="0"
+        [step]="1"
+        >
+    <input matSliderThumb [(ngModel)]="months" (click)="calculatePayment()">
+    </mat-slider>
+    <div class="example-label-container">
+        Average Monthly Payment: {{averageMonthlyPayment | number:'1.0-0'}}
+    </div>
+    <p></p>
+    <div class="example-label-container">
+        Total Payment: {{totalMonthlyPayment | number:'1.0-0'}}
+    </div>
+
+
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+</mat-dialog-actions>
+</div>

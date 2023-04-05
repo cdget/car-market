@@ -1,0 +1,20 @@
+<nav>  
+  <button type="button" (click)="goBack()">back</button>
+</nav>
+
+<ul class="models" *ngFor="let model of modelDetails">
+  <li>
+    <div>
+      <div><h3>{{model.make | uppercase}} {{model.model | uppercase}}</h3></div> 
+      <div>Fuel type: {{model.fuel_type }}</div> 
+      <div>Class: {{model.class }}</div> 
+      <div>Year: {{model.year }}</div> 
+      <div>Transmission: {{model.transmission }}</div>
+      <div>Price: 1000 NIS</div> 
+    </div>
+    <div>
+      <button type="button" (click)="openPopup(model.make +' '+ model.model)">Get a Quote</button> 
+      <button type="button">Finance Offer</button>
+    </div>
+  </li>
+</ul>

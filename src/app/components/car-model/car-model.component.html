@@ -1,0 +1,13 @@
+<nav>  
+  <button type="button" (click)="goBack()">back</button>
+  <h3>{{title | uppercase}} Models</h3>
+</nav>
+
+<ul class="models">
+  <li *ngFor="let model of models">
+    <a [style.padding.px]="20" routerLink="/model/{{model.model | lowercase}}">
+      <div>{{model.make | uppercase}} {{model.model}}</div> 
+      <div>Price: 1000 NIS</div> 
+    </a>
+  </li>
+</ul>

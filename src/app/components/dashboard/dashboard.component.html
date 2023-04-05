@@ -1,0 +1,7 @@
+<nav><h3>Car Brands</h3></nav>
+<div class="brands">
+  <a *ngFor="let brand of brands"
+      routerLink="/brand/{{brand.name | lowercase}}">
+      {{brand.name}}
+  </a>
+</div>
